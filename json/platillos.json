@@ -1,0 +1,76 @@
+[
+    {
+        "imagen":"img/plat/americano.jpg",
+        "nombre":"Café americano",
+        "categoria": "Caliente",
+        "descripcion": "Café clásico americano recien hecho",
+        "precio": 80,
+        "tamanio": "300"
+    },      
+    {
+        "imagen":"img/plat/frapuchino.jpg",
+        "nombre":"Café frapuchino",
+        "categoria": "Frío",
+        "descripcion": "Café con leche molido con hielo",
+        "precio": 90,
+        "tamanio": "300"
+    },  
+    {
+        "imagen":"img/plat/chocolate.jpg",
+        "nombre":"Chocolate",
+        "categoria": "Caliente",
+        "descripcion": "Chocolate méxicano recien hecho",
+        "precio": 60,
+        "tamanio": "150"
+    },  
+    {
+        "imagen":"img/plat/malteada.jpg",
+        "nombre":"Malteada",
+        "categoria": "Bebida",
+        "descripcion": "Malteada de fresa estilo americana",
+        "precio": 150,
+        "tamanio": "500"
+    },  
+    {
+        "imagen":"img/plat/olla.jpg",
+        "nombre":"Café de Olla",
+        "categoria": "Caliente",
+        "descripcion": "Café de olla con especias aromatizantes",
+        "precio": 80,
+        "tamanio": "300"
+    },  
+    {
+        "imagen":"img/plat/expresso.jpg",
+        "nombre":"Café expresso",
+        "categoria": "Caliente",
+        "descripcion": "Café concentrado listo extra caliente",
+        "precio": 50,
+        "tamanio": "150"
+    },  
+    {
+        "imagen":"img/plat/cold.jpg",
+        "nombre":"Cold Brew",
+        "categoria": "Frío",
+        "descripcion": "Café con leche sobre hielo",
+        "precio": 90,
+        "tamanio": "300"
+    },  
+    {
+        "imagen":"img/plat/capuchino.jpg",
+        "nombre":"Café capuchino",
+        "categoria": "Caliente",
+        "descripcion": "Café clásico con leche y espuma",
+        "precio": 80,
+        "tamanio": "300"
+    }  
+,
+{"nombre":"Galletas de Coraz\u00f3n","categoria":"Reposter\u00eda","tamanio":"100","precio":"50","imagen":"img\/plat\/galletas.jpg","descripcion":"Ricas galletas rellenas de mermelada"},
+{"nombre":"Galletas de Chispas de Chocolate","categoria":"Reposter\u00eda","tamanio":"250","precio":"100","imagen":"img\/plat\/galletas_chispas.png","descripcion":"La especialidad de la casa"},
+{"nombre":"Pastel Napolitano","categoria":"Reposter\u00eda","tamanio":"250","precio":"150","imagen":"img\/plat\/napolitano.jpg","descripcion":"Pastel de fresa, vainilla y chocolate"},
+{"nombre":"T\u00e9","categoria":"Bebida","tamanio":"150","precio":"30","imagen":"img\/plat\/te.jpg","descripcion":"Verde, negro o de frutos rojos"},
+{"nombre":"Pastel de Chocolate","categoria":"Reposter\u00eda","tamanio":"500","precio":"250","imagen":"img\/plat\/pchocolate.jpg","descripcion":"Rico pastel de chocolate"},
+{"nombre":"Limonada","categoria":"Bebida","tamanio":"250","precio":"30","imagen":"img\/plat\/limonada.jpg","descripcion":"Rica y fresca limonada"},
+{"nombre":"Pay de Queso","categoria":"Reposter\u00eda","tamanio":"150","precio":"50","imagen":"img\/plat\/578E5F9F-6DD7-44B5-BCFE-F4B0D0177382.jpg","descripcion":"Rico pay de queso"},
+{"nombre":"Agua","categoria":"Bebida","tamanio":"500","precio":"10","imagen":"img\/plat\/agua.jpeg","descripcion":"Agua natural refrescante"},
+{"nombre":"Juego Verde","categoria":"Bebida","tamanio":"300","precio":"20","imagen":"img\/plat\/verde.jpg","descripcion":"Rico Jugo"},
+{"nombre":"Jugo de Naranja","categoria":"Bebida","tamanio":"300","precio":"15","imagen":"img\/plat\/NARANJA.jpg","descripcion":"Fresco y natural"}]
