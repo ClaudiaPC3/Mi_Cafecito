@@ -1,6 +1,11 @@
 'use strict'
 
-const url = 'json/galeria.json';
+$.getScript('https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js', function()
+{
+    baguetteBox.run('.tz-gallery');
+});
+
+const url = 'galeria.json';
 const solicitud = new XMLHttpRequest();
 solicitud.open('POST',url); // primer parametro metodo de peticion, segundo url donde se encuentra el json
 
@@ -22,15 +27,14 @@ function tablaGal(jsonObj){
     for (var index = 0; index < jsonObj.length; index++){
 
         var columna=document.createElement("div");
-        columna.className="col-6 col-sm-4 mb-4";
+        columna.className="col-sm-6 col-md-4";
 
         var tarjeta=document.createElement("a");
-        tarjeta.className="thumbnail";
+        tarjeta.className="lightbox";
         tarjeta.href=document.createTextNode(jsonObj[index].imagen).textContent;
 
         var imagen = document.createElement("img");
         imagen.src=document.createTextNode(jsonObj[index].imagen).textContent;
-        imagen.className="img-fluid";
 
         tarjeta.appendChild(imagen);
         columna.appendChild(tarjeta);
