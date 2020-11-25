@@ -6,7 +6,7 @@
     <title>MI CAFECITO</title>
     <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Gabriela&family=Oleo+Script+Swash+Caps:wght@700&family=Paprika&family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/menu_prueba.css">
-    <link rel="stylesheet" href="../css/extra.scss">
+    <link rel="stylesheet" href="extra-administrador.scss">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -83,7 +83,7 @@
             </div>
             <div id="add_coffe" class="collapse show" aria-labelledby="h_add_coffe" data-parent="#accordion">
                 <div class="card-body">            
-                    <form  action="menu.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
+                    <form  action="../3-menu/create-platillo.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                             <label for="nombre">Nombre</label>
@@ -116,8 +116,8 @@
                         <div class="form-group">
                         <label for="img_menu">Imagen</label>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="img_menu">
-                          <label class="custom-file-label" for="" data-browse="Buscar">Seleccionar archivo</label>
+                          <input type="file" class="custom-file-input in-img-menu" id="img_menu" name="img_menu">
+                          <label class="custom-file-label" for="" data-browse="Buscar">Seleccionar archivo...</label>
                         </div>
                         </div>
                         <button type="submit" class="btn btn-enviar w-100" onclick="alert('Platillo Agregado')">Agregar</button>
@@ -148,7 +148,7 @@
                   <br><br>
                   </div>
                 <div class="divider"><span></span><span><i class="fas fa-folder-open"></i></span><span></span></div>                        
-                  <form  action="menu.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
+                  <form  action="" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
                       <div class="form-row">
                           <div class="form-group col-md-6">
                           <label for="nombre">Nombre</label>
@@ -183,7 +183,7 @@
                         <img class="card-img-top" src="../img/porgal.jpg" alt="Card image"><br><br>
                         <label class="col-md-6">Seleccione una nueva imagen</label>
                           <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="m-img_menu">
+                            <input type="file" class="custom-file-input mod-img-menu" id="m-img_menu">
                             <label class="custom-file-label" for="" data-browse="Buscar">Seleccionar archivo</label>
                           </div>
                       </div>
@@ -211,7 +211,7 @@
                         <div class="form-group">
                             <label for="img_gal">Imagen</label>
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="img_gal">
+                              <input type="file" class="custom-file-input in-img-gal" id="img_gal">
                               <label class="custom-file-label" for="" data-browse="Buscar">Seleccionar archivo</label>
                             </div>
                         </div> 
@@ -233,6 +233,7 @@
         }            
     </script>
            <script src="../js/prueba.js"></script>
+           <script src="extra-administrador.js"></script>
     </section>
 </body>
 
