@@ -7,7 +7,7 @@
     $conexion = mysqli_connect($servidor, $usuario, $psw, $bdd);
 
     if (!$conexion) {
-      die("Connection failed: " . mysqli_connect_error());
+        die("Connection failed: " . mysqli_connect_error());
     }
     echo"<h5>Si jala la conexion</h5>";
 
