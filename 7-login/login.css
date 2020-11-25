@@ -3,7 +3,7 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-image: url(../img/registrar.jpg);
+        background-image: url(../img/login.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -13,7 +13,7 @@
         width: 350px;
         margin-top: auto;
         margin-bottom: auto;
-        background: #d2afff;
+        background: #2A0859;
         position: relative;
         display: flex;
         justify-content: center;
@@ -31,7 +31,7 @@
         width: 170px;
         top: -75px;
         border-radius: 50%;
-        background: #2A0859;
+        background: white;
         padding: 10px;
         text-align: center;
     }
@@ -39,16 +39,17 @@
         height: 150px;
         width: 150px;
         border-radius: 50%;
-        border: 2px solid white;
-        object-fit: fill;
+        border: 2px solid #2A0859;
+        object-fit: cover;
     }
     .form_container {
         margin-top: 100px;
     }
+
     .login_btn {
         width: 100%;
-        background: #2A0859 !important;
-        color: white !important;
+        background: #d2afff !important;
+        color: #2A0859 !important;
         font-family: 'Cherry Swash', cursive;
     }
     .login_btn:focus {
@@ -59,8 +60,8 @@
         padding: 0 2rem;
     }
     .input-group-text {
-        background: #2A0859 !important;
-        color: white !important;
+        background: #d2afff !important;
+        color: #2A0859 !important;
         border: 0 !important;
         border-radius: 0.25rem 0 0 0.25rem !important;
     }
@@ -70,5 +71,5 @@
         outline: 0px !important;
     }
     .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-        background-color: #2A0859 !important;
+        background-color: #d2afff !important;
     }
