@@ -1,21 +1,19 @@
 'use strict'
 
-console.log('lo que sea');
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log(this.response);
+    }
+};
 
-const url = 'json/platillos.json';
-const solicitud = new XMLHttpRequest();
-solicitud.open('POST',url); // primer parametro metodo de peticion, segundo url donde se encuentra el json
+xmlhttp.open("GET", "./menu.php", true);
+xmlhttp.responseType = 'json';
+xmlhttp.send();
 
-solicitud.responseType = 'json';
-solicitud.send();
-console.log('lo que seax2');
-
-
-solicitud.onload = ()=>{
-    const Platillo = solicitud.response;
-    console.log(Platillo[0].nombre);
-    tablaPlatillo(Platillo);
-    console.log(Platillo);
+xmlhttp.onload = ()=>{
+    const response = xmlhttp.response;
+    tablaPlatillo(response);
 }
 
 
@@ -24,19 +22,19 @@ function tablaPlatillo(jsonObj){
     for (var index = 0; index < jsonObj.length; index++){
         /*SELECTOR DE SECCION*/
         switch(jsonObj[index].categoria){
-            case "Caliente": 
+            case "caliente": 
                 var tabla = document.querySelector("#caliente");
             break;
 
-            case "Frío": 
+            case "frio": 
                 var tabla = document.querySelector("#frio");
             break;
 
-            case "Repostería": 
+            case "reposteria": 
                 var tabla = document.querySelector("#reposteria");
             break;
 
-            case "Bebida": 
+            case "bebida": 
                 var tabla = document.querySelector("#bebida");
             break;                        
 
@@ -80,11 +78,11 @@ function tablaPlatillo(jsonObj){
 
         if(jsonObj[index].categoria == "Repostería"){
             var porcionCantidad=document.createElement("p");
-            var porcionCantidadText=document.createTextNode(jsonObj[index].tamanio+" gr");
+            var porcionCantidadText=document.createTextNode(jsonObj[index].porcion+" gr");
             porcionCantidad.appendChild(porcionCantidadText);    
         }else{
             var porcionCantidad=document.createElement("p");
-            var porcionCantidadText=document.createTextNode(jsonObj[index].tamanio+" ml");
+            var porcionCantidadText=document.createTextNode(jsonObj[index].porcion+" ml");
             porcionCantidad.appendChild(porcionCantidadText);    
         }
 
