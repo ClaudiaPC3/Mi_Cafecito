@@ -48,6 +48,7 @@ CREATE TABLE `platillo` (
   `porcion` int(11) NOT NULL,
   `precio` float NOT NULL,
   `categoria` enum('caliente','frio','bebida','reposteria') DEFAULT NULL,
+  `descripcion` text NOT NULL,
   `imagen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
