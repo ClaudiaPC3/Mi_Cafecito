@@ -1,15 +1,5 @@
 <?php
-    $servidor = "127.0.0.1";
-	$usuario  = "root";
-	$psw	  = "";
-	$bdd	  = "micafecito";
-
-    $conexion = mysqli_connect($servidor, $usuario, $psw, $bdd);
-
-    if (!$conexion) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    echo"<h5>Si jala la conexion</h5>";
+    include("../php/conexion.php");
 
 
     $username = $_POST ['username'];

@@ -1,30 +1,40 @@
 <?php
-header("Status: 301 Moved Permanently");
-header("Location: http://localhost:8080/sitioCompleto/membresia.html");
-$username = $_POST ['username'];
-$email = $_POST ['email'];
-$password = $_POST ['password'];
+include("../php/conexion.php");
 
-
-$datos = array(
-       'username' => $username,
-       'email' => $email,
-       'password' => $password,
-);
-
-
-//creamos JSON
-$json_string = json_encode($datos);
-$file = "json/login.json";
-$actual = file_get_contents($file); // toma los datos que estan en el img_menu json
-if(empty($actual)){
-    $actual = "[\n";
-    $actual .= $json_string . "]";
-}else{
-    $actual = str_replace("]","",$actual); // el primer parametro es el que se va a sustituir, el segundo es por el cual se va a sustituir y el tercero es la cadena donde lo va a sustituir
-    $actual .= ",\n" . $json_string . "]";
-}
-
-file_put_contents($file,$actual); 
-
+$username = $_POST['l-username'];
+$pass =  $_POST['l-password'];
+	
+	$sql= "SELECT username FROM usuario WHERE username='$username'";
+	$myusuario= $conexion->query($sql);
+    $nmyusuario= mysqli_num_rows($myusuario);
+    
+	if ($nmyusuario != 0){
+		$sql = "SELECT username FROM usuario WHERE username = '".$username."' AND contraseña = '".$pass."'";
+		$mypass = $conexion->query($sql);
+		$nmypass = mysqli_num_rows($mypass);
+		
+		if($nmypass != 0){
+            echo " <script language='JavaScript'>
+                        alert('Inicio de sesión correcto'); 
+                        window.location.href=\"../1-home/index.html\";
+                    </script>";
+			$dato=$conexion->query($sql);
+			session_start();
+			$_SESSION["autentica"] = "Si";
+			echo $_SESSION["usuarioactual"]= $dato->username;
+		}
+		else{
+			echo " <script language='JavaScript'>
+                        alert('La contrasena del usuario no es correcta');
+                        window.location.href=\"login.html\";
+                    </script>";
+		}
+	}else{
+			echo " <script language='JavaScript'>
+                        alert('El usuario no existe');
+                        window.location.href=\"login.html\";
+                    </script>";
+        }
+        
+	$conexion->close();
 ?>
