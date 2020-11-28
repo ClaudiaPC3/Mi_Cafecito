@@ -27,5 +27,5 @@
     }
 
 mysqli_close($conexion);
-
+header('location: ../1-home/index.html');
 ?>
