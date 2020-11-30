@@ -14,9 +14,7 @@
     }
 
     $conexion->close();
-?>
 
-<?php
     /* header("Status: 301 Moved Permanently");
     header("Location: http://localhost:8080/sitioCompleto/administrador.html");
     $nombre = $_POST ['nombre'];

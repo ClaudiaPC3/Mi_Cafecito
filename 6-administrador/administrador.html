@@ -134,21 +134,48 @@
           </div>
           <div id="mod_coffe" class="collapse show" aria-labelledby="h_mod_coffe" data-parent="#accordion">
               <div class="card-body">    
-                  <h6>Elige un platillo</h6>
+                  <!-- <h6>Elige un platillo</h6>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <button class="btn btn-enviar btn-outline-secondary" type="button">Elegir</button>
                     </div>
-                    <select class="custom-select" id="select-plat" aria-label="Example select with button addon">
-                      <option selected>Opciones...</option>
-                      <!--<option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>-->
+                    <select class="custom-select" id="select-plat" aria-label="Example select with button addon" name="m-platillo">
+                      <option value="1">Café americano</option>
+                      <option value="2">Café frapuchino</option>
+                      <option value="3">Chocolate</option>
+                      <option value="4">Malteada</option>
+                      <option value="5">Café de olla</option>
+                      <option value="6">Café expreso</option>
+                      <option value="7">Cold brew</option>
+                      <option value="8">Café capuchino</option>
+                      <option value="9">Galletas de corazón</option>
+                      <option value="10">Galletas de chispas de chocolate</option>
+                      <option value="11">Pastel napolitano</option>
+                      <option value="12">Té</option>
+                      <option value="13">Pastel de chocolate</option>
+                      <option value="14">Limonada</option>
+                      <option value="15">Pay de queso</option>
+                      <option value="16">Agua</option>
+                      <option value="17">Jugo verde</option>
+                      <option value="18">Jugo de naraja</option>
                     </select>
                   <br><br>
-                  </div>
+                  </div> -->
                 <div class="divider"><span></span><span><i class="fas fa-folder-open"></i></span><span></span></div>                        
-                  <form  action="" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
+                  <form  action="administrador.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
+                      <h6>Elige un platillo</h6>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-enviar btn-outline-secondary" type="button">Elegir</button>
+                        </div>
+                        <select class="custom-select" id="select-plat" aria-label="Example select with button addon" name="m-platillo">
+                          
+                          <!--<option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>-->
+                        </select>
+                      <br><br>
+                      </div>
                       <div class="form-row">
                           <div class="form-group col-md-6">
                           <label for="nombre">Nombre</label>
@@ -157,10 +184,10 @@
                           <div class="form-group col-md-6">
                           <label for="categoria">Categoría</label>
                           <select id="m-categoria" name="m-categoria" class="form-control">
-                              <option value="Caliente">Caliente</option>
-                              <option value="Frío">Frío</option>
-                              <option value="Repostería">Respostería</option>
-                              <option value="Bebida">Bebidas</option>
+                              <option value="caliente">Caliente</option>
+                              <option value="frio">Frío</option>
+                              <option value="reposteria">Respostería</option>
+                              <option value="bebida">Bebidas</option>
                           </select>
                           </div>
                       </div>        
@@ -183,7 +210,7 @@
                         <img class="card-img-top" src="../img/porgal.jpg" alt="Card image"><br><br>
                         <label class="col-md-6">Seleccione una nueva imagen</label>
                           <div class="custom-file">
-                            <input type="file" class="custom-file-input mod-img-menu" id="m-img_menu">
+                            <input type="file" class="custom-file-input mod-img-menu" id="m-img_menu" name="m-img_menu">
                             <label class="custom-file-label" for="" data-browse="Buscar">Seleccionar archivo</label>
                           </div>
                       </div>
