@@ -5,7 +5,7 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 
-xmlhttp.open("GET", "./administrador-load.php", true);
+xmlhttp.open("GET", "./php/administrador-load.php", true);
 xmlhttp.responseType = 'json';
 xmlhttp.send();
 
@@ -13,6 +13,7 @@ xmlhttp.onload = ()=>{
     const response = xmlhttp.response;
     //console.log(response);
     document.getElementById("select-plat").innerHTML = `${response.map((row) => selectTemplate(row)).join("")}`
+    document.getElementById("delete-plat").innerHTML = `${response.map((row) => selectTemplate(row)).join("")}`
     console.log(json);
 }
 

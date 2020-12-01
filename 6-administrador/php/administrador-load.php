@@ -1,5 +1,5 @@
 <?php
-    include("../php/conexion.php");
+    include("../../php/conexion.php");
 
     $sql = "SELECT id, nombre FROM platillo";
     $result = mysqli_query($conexion, $sql);
