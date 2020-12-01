@@ -206,26 +206,48 @@
         
             <div class="collapse w-50 h-30 ml-5 mr-3" id="Contactanos">
                 <div class="divider"><span></span><span><i class="far fa-envelope"></i></span><span></span></div>
-                <div class="card ml-5 border-white">
-                <div class="card-body">            
-                    <form  action="buzon.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                            <label for="username">username</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre"  placeholder="tu nombre aqui..."></input>
-                            </div>                        
-                        </div>        
+                <div class="card-header"><h4>Queremos escucharte!</h4></div>  
+                <div class="card border-white">
+                
+                <div class="card-body">  
+                  <!--USUARIO INVITADO-->
+                  <div id="disp-user-notlogged" class="disp-user-notlogged d-block">
+                    <h5 style="font-family: 'Croissant One', cursive;">Hola usuario! Estas ingresando como invitado.</h5>
+                    <h5 style="font-family: 'Croissant One', cursive; font-size: 18px;">Para comunicarnos contigo, es necesario 
+                    <a href="../7-login/login.html" class="loginLink-dec">iniciar sesion</a></h5>
+                  </div>
+                    <form  action="buzon.php" method="POST" name="agregar_menu" enctype="multipart/form-data">   
+                      <!--USUARIO ACTIVO-->     
+                      <div class="form-group row d-none" id="disp-user-logged">
+                        <label for="username" class="col-sm-2 col-form-label">Usuario</label>
+                        <div class="input-group col">
+                          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                          <div class="input-group-append">
+                            <button class="btn btn-enviar" style="background-color: #d2afff !important; color: #2A0859 !important" type="button" id="button-addon2">¿No eres tu?</button>
+                          </div>
+                        </div>
+                      </div>                
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="asunto">Asunto</label>
                             <select id="asunto" name="asunto" class="form-control">
-                                <option value="sugerencia">Sugerencia</option>
-                                <option value="comentario">Comentario</option>
-                                <option value="queja">Queja</option>
-                                <option value="otro">Otro..</option>
+                                <option type="button" value="sugerencia" id="sug" onclick="hidePlat()">Sugerencia</option>
+                                <option type="button" value="queja" id="quej"  onclick="hidePlat()">Queja</option>                                
+                                <option type="button" value="comentario" id="plati" onclick="$('#show-plat-in').toggleClass('visible');$('#show-plat-in').removeClass('invisible');">Platillo</option>
+                                <option selected type="button" value="otro" id="otro" onclick="hidePlat()">Otro..</option>
                             </select>
                             </div>
-                        </div>
+                            <!--SELECT PLATILLO-->
+                            <div class="form-group col-md-6 invisible" id="show-plat-in">
+                              <label for="asunto">Platillo</label>
+                              <select class="custom-select" id="select-plat" aria-label="Example select with button addon" name="m-platillo">
+                                
+                                <!--<option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>-->
+                                </select>
+                            </div>   
+                        </div>                     
                         <div class="form-group">
                         <label for="mensaje">Mensaje</label>
                         <textarea type="text" class="form-control" id="mensaje" name="mensaje" maxlength="40" placeholder="tu mensaje aqui"></textarea>
@@ -248,6 +270,16 @@
             $('nav').toggleClass('notScrolled');
         }            
     </script>
+
+<script>
+  function hidePlat(){
+    if(document.getElementById('show-plat-in').classList.contains('visible')){
+    $('#show-plat-in').toggleClass('invisible');
+    $('#show-plat-in').removeClass('visible');
+    }
+  }
+</script>
+
            <script src="../js/prueba.js"></script>
     </section>
 </body>
