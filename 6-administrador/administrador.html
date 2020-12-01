@@ -161,7 +161,7 @@
                     </select>
                   <br><br>
                   </div> -->                        
-                  <form  action="administrador.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
+                  <form  action="./php/administrador.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
                       <h6>Elige un platillo</h6>
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -232,13 +232,13 @@
         </div>
         <div id="del_coffe" class="panel-collapse collapse" aria-labelledby="h_del_coffe" data-parent="#accordion">
             <div class="card-body">                
-                <form  action="administrador.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
+                <form  action="./php/administrador-delete.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
                     <h6>Elige un platillo</h6>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <button class="btn btn-enviar btn-outline-secondary" type="button">Elegir</button>
                       </div>
-                      <select class="custom-select" id="select-plat" aria-label="Example select with button addon" name="m-platillo">
+                      <select class="custom-select" id="delete-plat" aria-label="Example select with button addon" name="d-platillo">
                         
                         <!--<option value="1">One</option>
                         <option value="2">Two</option>
@@ -246,7 +246,7 @@
                       </select>
                     <br><br>
                     </div>
-                    <button id="m-delete" class="btn btn-enviar w-100" style="background-color: #d2afff !important; color: #2A0859 !important" onclick="alert('Platillo Eliminado')">Eliminar</button>
+                    <button id="m-delete" class="btn btn-enviar w-100" style="background-color: #d2afff !important; color: #2A0859 !important">Eliminar</button>
                 </form>
               </div>
             </div>
