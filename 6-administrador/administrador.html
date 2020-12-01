@@ -77,11 +77,11 @@
 
         <div class="card p-3">
             <div class="card-header" id="h_add_coffe">
-                <a role="button" class="collapsed" data-toggle="collapse" data-target="#add_coffe" aria-expanded="true" aria-controls="add_coffe">
+                <a role="button" class="collapsed" data-toggle="collapse" data-target="#add_coffe" aria-expanded="false" aria-controls="add_coffe">
                     <h4 style="color: #2A0859;">Agregar Bebida al Menu</h4><div class="divider"><span></span><span><i class="fas fa-utensils"></i></span><span></span></div>
                 </a>
             </div>
-            <div id="add_coffe" class="collapse show" aria-labelledby="h_add_coffe" data-parent="#accordion">
+            <div id="add_coffe" class="panel-collapse collapse" aria-labelledby="h_add_coffe" data-parent="#accordion">
                 <div class="card-body">            
                     <form  action="../3-menu/create-platillo.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
                         <div class="form-row">
@@ -132,7 +132,7 @@
                   <h4 style="color: #2A0859;">Modificar Bebida del Menu</h4><div class="divider"><span></span><span><i class="fas fa-exchange-alt"></i></span><span></span></div>
               </a>
           </div>
-          <div id="mod_coffe" class="collapse show" aria-labelledby="h_mod_coffe" data-parent="#accordion">
+          <div id="mod_coffe" class="panel-collapse collapse" aria-labelledby="h_mod_coffe" data-parent="#accordion">
               <div class="card-body">    
                   <!-- <h6>Elige un platillo</h6>
                   <div class="input-group mb-3">
@@ -160,8 +160,7 @@
                       <option value="18">Jugo de naraja</option>
                     </select>
                   <br><br>
-                  </div> -->
-                <div class="divider"><span></span><span><i class="fas fa-folder-open"></i></span><span></span></div>                        
+                  </div> -->                        
                   <form  action="administrador.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
                       <h6>Elige un platillo</h6>
                       <div class="input-group mb-3">
@@ -176,6 +175,7 @@
                         </select>
                       <br><br>
                       </div>
+                      <div class="divider"><span></span><span><i class="fas fa-folder-open"></i></span><span></span></div>                      
                       <div class="form-row">
                           <div class="form-group col-md-6">
                           <label for="nombre">Nombre</label>
@@ -215,16 +215,55 @@
                           </div>
                       </div>
                       <br><br>
-                        <div class="d-flex">
                           <button type="submit" class="btn btn-enviar w-100">Agregar</button>
-                          <button id="m-delete" class="btn btn-enviar w-100" style="background-color: #d2afff !important; color: #2A0859 !important" onclick="alert('Platillo Eliminado')">Eliminar</button>
-                        </div>
-
                   </form>
                 </div>
               </div>
           </div>    
       </div>
+
+
+
+      <div class="card p-3">
+        <div class="card-header" id="h_del_coffe">
+            <a role="button" class="collapsed" data-toggle="collapse" data-target="#del_coffe" aria-expanded="false" aria-controls="del_coffe">
+                <h4 style="color: #2A0859;">Eliminar Bebida del Menu</h4><div class="divider"><span></span><span><i class="fas fa-trash-alt"></i></span><span></span></div>
+            </a>
+        </div>
+        <div id="del_coffe" class="panel-collapse collapse" aria-labelledby="h_del_coffe" data-parent="#accordion">
+            <div class="card-body">                
+                <form  action="administrador.php" method="POST" name="mod_menu" enctype="multipart/form-data"> <!--quiza?-->
+                    <h6>Elige un platillo</h6>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-enviar btn-outline-secondary" type="button">Elegir</button>
+                      </div>
+                      <select class="custom-select" id="select-plat" aria-label="Example select with button addon" name="m-platillo">
+                        
+                        <!--<option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>-->
+                      </select>
+                    <br><br>
+                    </div>
+                    <button id="m-delete" class="btn btn-enviar w-100" style="background-color: #d2afff !important; color: #2A0859 !important" onclick="alert('Platillo Eliminado')">Eliminar</button>
+                </form>
+              </div>
+            </div>
+        </div>    
+    </div>
+
+
+
+
+
+
+
+
+
+
+     
+
 
         <div class="card p-3">
             <div class="card-header" id="h_add_img">
@@ -232,7 +271,7 @@
                     <h4 style="color: #2A0859;">Agregar Imagen a la Galeria</h4><div class="divider"><span></span><span><i class="fas fa-camera"></i></span><span></span></div>
                 </a>
             </div>
-            <div id="add_img" class="collapse show" aria-labelledby="h_add_img" data-parent="#accordion">
+            <div id="add_img" class="panel-collapse collapse" aria-labelledby="h_add_img" data-parent="#accordion">
                 <div class="card-body">           
                     <form  action="galeria.php" method="POST" name="agregar_galeria" enctype="multipart/form-data">
                         <div class="form-group">

@@ -474,3 +474,7 @@ h3{
 .nav-link{
   color: #2A0859;
 }
+
+.elementor-accordion .elementor-accordion-item:first-child {
+  display: none;
+  }
