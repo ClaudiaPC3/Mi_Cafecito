@@ -9,19 +9,23 @@ $pass =  $_POST['l-password'];
     $nmyusuario= mysqli_num_rows($myusuario);
     
 	if ($nmyusuario != 0){
-		$sql = "SELECT username FROM usuario WHERE username = '".$username."' AND contraseña = '".$pass."'";
-		$mypass = $conexion->query($sql);
-		$nmypass = mysqli_num_rows($mypass);
+		$sql = "SELECT * FROM usuario WHERE username = '".$username."' AND contraseña = '".$pass."'";
+		$result = $conexion->query($sql);
+		$nresult = mysqli_num_rows($result);
+
+		$userData = $result -> fetch_assoc();
 		
-		if($nmypass != 0){
-            echo " <script language='JavaScript'>
-                        alert('Inicio de sesión correcto'); 
-                        window.location.href=\"../1-home/index.html\";
-                    </script>";
-			$dato=$conexion->query($sql);
+		if($nresult != 0){
+
 			session_start();
-			$_SESSION["autentica"] = "Si";
-			echo $_SESSION["usuarioactual"]= $dato->username;
+
+			$_SESSION['username'] = $userData["username"];
+			$_SESSION['admin'] = $userData["admin"];
+
+			echo " <script language='JavaScript'>
+						alert('Inicio de sesión correcto'); 
+						window.location.href=\"../1-home/index.php\";
+					</script>";
 		}
 		else{
 			echo " <script language='JavaScript'>

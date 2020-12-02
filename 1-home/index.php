@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -53,17 +56,40 @@
                   </li>          
                 </ul>
               </div>
-              <div class="dropdown dropi">
-                <a role="button" id="log-nav" class="btn-nav-log dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="myFunction(this.id)">Usuario</a>
-                <div class="dropdown-menu dropdown-menu-right dropi2">
-                  <a class="dropdown-item" role="button" href="../7-login/login.html">Ingresa</a>
-                  <a class="dropdown-item" role="button" href="../8-registro/registro.html">Registrate</a>
-                  <a class="dropdown-item" role="button" href="../6-administrador/administrador.html">Opciones de administrador</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" role="button">Cerrar Sesion</a>
-                </div>
-              </div>
 
+                  <div class="dropdown dropi">
+                    <a role="button" id="log-nav" class="btn-nav-log dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="myFunction(this.id)">
+                            <?php 
+                            if(isset($_SESSION["username"])){
+                              echo $_SESSION["username"];
+                            }else{
+                              echo "Usuario";
+                            }
+                              
+                            ?>
+                    </a>
+                    <?php 
+                      if(isset($_SESSION["username"]) and $_SESSION["admin"] == "1"){
+                        echo '
+                        <div class="dropdown-menu dropdown-menu-right dropi2">
+                        <a class="dropdown-item" role="button" href="../6-administrador/administrador.html">Opciones de administrador</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" role="button" href="../php/cerrarSesion.php">Cerrar Sesion</a>
+                      </div>';
+                      }else if(isset($_SESSION["username"])){
+                        echo '
+                        <div class="dropdown-menu dropdown-menu-right dropi2">
+                        <a class="dropdown-item" role="button" href="../php/cerrarSesion.php">Cerrar Sesion</a>
+                      </div>';
+
+                      }else{
+                        echo '
+                        <div class="dropdown-menu dropdown-menu-right dropi2">
+                          <a class="dropdown-item" role="button" href="../7-login/login.html">Ingresa</a>
+                          <a class="dropdown-item" role="button" href="../8-registro/registro.html">Registrate</a>
+                        </div>';
+                      }
+                    ?>
             </div>
           </nav>
         <!--rutas actualizadas-->
