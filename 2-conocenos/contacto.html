@@ -40,7 +40,7 @@
           <div class="collapse navbar-collapse ligas" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="../1-home/index.html">Home
+                <a class="nav-link" href="../1-home/index.php">Home
                       <span class="sr-only">(current)</span>
                     </a>
               </li>
@@ -209,14 +209,14 @@
                 <div class="card-header"><h4>Queremos escucharte!</h4></div>  
                 <div class="card border-white">
                 
-                <div class="card-body">  
+                <div class="card-body" id="comentario-body">  
                   <!--USUARIO INVITADO-->
                   <div id="disp-user-notlogged" class="disp-user-notlogged d-block">
                     <h5 style="font-family: 'Croissant One', cursive;">Hola usuario! Estas ingresando como invitado.</h5>
                     <h5 style="font-family: 'Croissant One', cursive; font-size: 18px;">Para comunicarnos contigo, es necesario 
                     <a href="../7-login/login.html" class="loginLink-dec">iniciar sesion</a></h5>
                   </div>
-                    <form  action="buzon.php" method="POST" name="agregar_menu" enctype="multipart/form-data">   
+                    <form  action="./php/buzon.php" method="POST" name="agregar_menu" enctype="multipart/form-data" id="form-comentario">   
                       <!--USUARIO ACTIVO-->     
                       <div class="form-group row d-none" id="disp-user-logged">
                         <label for="username" class="col-sm-2 col-form-label">Usuario</label>
@@ -232,8 +232,8 @@
                             <label for="asunto">Asunto</label>
                             <select id="asunto" name="asunto" class="form-control">
                                 <option type="button" value="sugerencia" id="sug" onclick="hidePlat()">Sugerencia</option>
-                                <option type="button" value="queja" id="quej"  onclick="hidePlat()">Queja</option>                                
-                                <option type="button" value="comentario" id="plati" onclick="$('#show-plat-in').toggleClass('visible');$('#show-plat-in').removeClass('invisible');">Platillo</option>
+                                <option type="button" value="comentario" id="quej"  onclick="hidePlat()">Comentario</option>                                
+                                <option type="button" value="platillo" id="plati" onclick="$('#show-plat-in').toggleClass('visible');$('#show-plat-in').removeClass('invisible');">Platillo</option>
                                 <option selected type="button" value="otro" id="otro" onclick="hidePlat()">Otro..</option>
                             </select>
                             </div>
@@ -252,7 +252,7 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea type="text" class="form-control" id="mensaje" name="mensaje" maxlength="40" placeholder="tu mensaje aqui"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-enviar w-100" onclick="alert('Datos Enviados')">Enviar</button>
+                        <button type="submit" class="btn btn-enviar w-100">Enviar</button>
                     </form>
                 </div>
                   </div>
@@ -262,25 +262,26 @@
             <br>
     <section>
       <script>
-        if($(window).scrollTop() > 40){
-            $('nav').removeClass('notScrolled');
-            $('nav').toggleClass('scrolled');
-        }else{
-            $('nav').removeClass('scrolled');
-            $('nav').toggleClass('notScrolled');
-        }            
-    </script>
+          if($(window).scrollTop() > 40){
+              $('nav').removeClass('notScrolled');
+              $('nav').toggleClass('scrolled');
+          }else{
+              $('nav').removeClass('scrolled');
+              $('nav').toggleClass('notScrolled');
+          }            
+      </script>
 
-<script>
-  function hidePlat(){
-    if(document.getElementById('show-plat-in').classList.contains('visible')){
-    $('#show-plat-in').toggleClass('invisible');
-    $('#show-plat-in').removeClass('visible');
-    }
-  }
-</script>
+      <script>
+        function hidePlat(){
+          if(document.getElementById('show-plat-in').classList.contains('visible')){
+          $('#show-plat-in').toggleClass('invisible');
+          $('#show-plat-in').removeClass('visible');
+          }
+        }
+      </script>
 
-           <script src="../js/prueba.js"></script>
+      <script src="../js/prueba.js"></script>
+      <script src="./contacto.js"></script>
     </section>
 </body>
 
