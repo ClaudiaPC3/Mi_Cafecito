@@ -96,7 +96,7 @@
                 </body>
                 <script LANGUAGE="JavaScript">
                     window.alert("Producto modificado de manera exitosa.");
-                    window.location.href="./administrador.html";
+                    window.location.href="../administrador.php";
                 </script>
             ');
     } else {

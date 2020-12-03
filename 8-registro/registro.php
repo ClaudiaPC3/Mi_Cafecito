@@ -17,5 +17,5 @@
     }
 
 mysqli_close($conexion);
-header('location: ../1-home/index.html');
+header('location: ../7-login/login.html');
 ?>

@@ -43,20 +43,20 @@
                         </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../2-conocenos/contacto.html">Conocenos</a>
+                    <a class="nav-link" href="../2-conocenos/contacto.php">Conocenos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../3-menu/menu.html">Menu</a>
+                    <a class="nav-link" href="../3-menu/menuF.php">Menu</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../4-miembros/membresia.html">Miembros</a>
+                    <a class="nav-link" href="../4-miembros/membresia.php">Miembros</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../5-galería/galeria.html">Galería</a>
+                    <a class="nav-link" href="../5-galería/galeria.php">Galería</a>
                   </li>          
                 </ul>
               </div>
-
+<!-- de aqui -->
                   <div class="dropdown dropi">
                     <a role="button" id="log-nav" class="btn-nav-log dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="myFunction(this.id)">
                             <?php 
@@ -72,7 +72,7 @@
                       if(isset($_SESSION["username"]) and $_SESSION["admin"] == "1"){
                         echo '
                         <div class="dropdown-menu dropdown-menu-right dropi2">
-                        <a class="dropdown-item" role="button" href="../6-administrador/administrador.html">Opciones de administrador</a>
+                        <a class="dropdown-item" role="button" href="../6-administrador/administrador.php">Opciones de administrador</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" role="button" href="../php/cerrarSesion.php">Cerrar Sesion</a>
                       </div>';
@@ -91,6 +91,7 @@
                       }
                     ?>
             </div>
+            <!-- a aqui -->
           </nav>
         <!--rutas actualizadas-->
 
@@ -123,7 +124,7 @@
               <div class="carousel-item active">
                 <img src="../img/somo.jpg" class="d-block w-100 img_carr" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <div class="tit-sider"><a href="..//contacto.html"><h5>SOBRE NOSOTROS</h5></a></div>
+                  <div class="tit-sider"><a href="../2-conocenos/contacto.php"><h5>SOBRE NOSOTROS</h5></a></div>
                   <div class="mis">
                       <p>Somos una pequeña cafetería comprometida por brindarte servicios de calidad a precios competitivos</p>
                   </div>
@@ -132,7 +133,7 @@
               <div class="carousel-item">
                   <img src="../img/menu.jpg" class="d-block w-100 img_carr" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <div class="tit-sider"><a href="../3-menu/menu.html"><h5>MENU</h5></a></div>
+                    <div class="tit-sider"><a href="../3-menu/menuF.php"><h5>MENU</h5></a></div>
                     <div class="mis">
                       <p>Conoce nuestra variedad de productos</p>
                       <p>Desde luego nuestro fuerte son las bebidas, pero tambien contamos una deliciosa reposteria francesa</p>
@@ -142,7 +143,7 @@
                 <div class="carousel-item">
                   <img src="../img/membresia.jpg" class="d-block w-100 img_carr" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <div class="tit-sider"><a href="../4-miembros/membresia.html"><h5>MIEMBROS</h5></a></div>
+                    <div class="tit-sider"><a href="../4-miembros/membresia.php"><h5>MIEMBROS</h5></a></div>
                     <div class="mis">
                       <p>Conoce nuestras ofertas exclusivas para miembros</p>
                     </div>
@@ -151,7 +152,7 @@
                 <div class="carousel-item">
                   <img src="../img/galeria.jpg" class="d-block w-100 img_carr" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <div class="tit-sider"><a href="../5-galería/galeria.html"><h5>GALERIA</h5></a></div>
+                    <div class="tit-sider"><a href="../5-galería/galeria.php"><h5>GALERIA</h5></a></div>
                     <div class="mis">
                       <p>¡Descubre todos lo que tenemos para ofrecer!</p>
                       <p>Desde nuestras instalaciones, hasta nuestros platillos favoritos</p>
@@ -189,10 +190,10 @@
         <p>¡Conoce más!</p>
       </div>
       <div class="card-footer flex-food">
-        <a href="../2-conocenos/contacto.html#mis" data-toggle="tooltip" data-placement="bottom" title="Hooray!"><i class="fas fa-key fa-2x"></i></a>
-        <a href="../2-conocenos/contacto.html#vis"><i class="far fa-lightbulb fa-2x"></i></a>
-        <a href="../2-conocenos/contacto.html#desci"><i class="fas fa-users fa-2x"></i></a>
-        <a href="../2-conocenos/contacto.html#mail"><i class="fas fa-envelope fa-2x"></i></a>
+        <a href="../2-conocenos/contacto.php#mis" data-toggle="tooltip" data-placement="bottom" title="Hooray!"><i class="fas fa-key fa-2x"></i></a>
+        <a href="../2-conocenos/contacto.php#vis"><i class="far fa-lightbulb fa-2x"></i></a>
+        <a href="../2-conocenos/contacto.php#desci"><i class="fas fa-users fa-2x"></i></a>
+        <a href="../2-conocenos/contacto.php#mail"><i class="fas fa-envelope fa-2x"></i></a>
       </div>
     </div>
   </section>
@@ -209,10 +210,10 @@
         <p>¡Conoce más!</p>
       </div>
       <div class="card-footer flex-food">
-        <a href="../3-menu/menu.html#calientes"><i class="fab fa-hotjar fa-2x"></i></a>
-        <a href="../3-menu/menu.html#frios"><i class="far fa-snowflake fa-2x"></i></a>
-        <a href="../3-menu/menu.html#reposterias"><i class="fas fa-birthday-cake fa-2x"></i></a>
-        <a href="../3-menu/menu.html#bebidas"><i class="fas fa-glass-whiskey fa-2x"></i></a>
+        <a href="../3-menu/menuF.php#calientes"><i class="fab fa-hotjar fa-2x"></i></a>
+        <a href="../3-menu/menuF.php#frios"><i class="far fa-snowflake fa-2x"></i></a>
+        <a href="../3-menu/menuF.php#reposterias"><i class="fas fa-birthday-cake fa-2x"></i></a>
+        <a href="../3-menu/menuF.php#bebidas"><i class="fas fa-glass-whiskey fa-2x"></i></a>
       </div>
     </div>
   </section>
@@ -229,10 +230,10 @@
         <p>¡Conoce más!</p>
       </div>
       <div class="card-footer flex-food">
-        <a href="../4-miembros/membresia.html"><i class="far fa-laugh-beam fa-2x"></i></a>
-        <a href="../4-miembros/membresia.html"><i class="far fa-grin-stars fa-2x"></i></a>
-        <a href="../4-miembros/membresia.html"><i class="far fa-smile-wink fa-2x"></i></a>
-        <a href="../4-miembros/membresia.html"><i class="far fa-grin-tongue-wink fa-2x"></i></a>
+        <a href="../4-miembros/membresia.php"><i class="far fa-laugh-beam fa-2x"></i></a>
+        <a href="../4-miembros/membresia.php"><i class="far fa-grin-stars fa-2x"></i></a>
+        <a href="../4-miembros/membresia.php"><i class="far fa-smile-wink fa-2x"></i></a>
+        <a href="../4-miembros/membresia.php"><i class="far fa-grin-tongue-wink fa-2x"></i></a>
       </div>
     </div>
   </section>
@@ -249,10 +250,10 @@
         <p>¡Conoce más!</p>
       </div>
       <div class="card-footer flex-food">
-        <a href="../5-galería/galeria.html"><i class="fas fa-camera-retro fa-2x"></i></a>
-        <a href="../5-galería/galeria.html"><i class="far fa-images fa-2x"></i></a>
-        <a href="../5-galería/galeria.html"><i class="fas fa-file-image fa-2x"></i></a>
-        <a href="../5-galería/galeria.html"><i class="fas fa-portrait fa-2x"></i></a>
+        <a href="../5-galería/galeria.php"><i class="fas fa-camera-retro fa-2x"></i></a>
+        <a href="../5-galería/galeria.php"><i class="far fa-images fa-2x"></i></a>
+        <a href="../5-galería/galeria.php"><i class="fas fa-file-image fa-2x"></i></a>
+        <a href="../5-galería/galeria.php"><i class="fas fa-portrait fa-2x"></i></a>
       </div>
     </div>
   </section>
@@ -278,47 +279,47 @@
 
 <!--FOOTER con rutas actualizadas-->
 <footer class="card-group">
-        <div class="card">
-          <div class="card-body card-body-f">
-            <h5 class="card-title">MAPA DEL SITIO</h5>
-            <p class="card-text">
-                <div class="text-center center-block sitio">
-                        <a href="../1-home/index.html"><p>HOME</p></a>
-                        <a href="../3-menu/menu.html"><p>MENU</p></a>
-                        <a href="../5-galería/galeria.html"><p>GALERIA</p></a>
-                        <a href="../4-miembros/membresia.html"><p>MEMBRESIAS</p></a>
-                        <a href="../2-conocenos/contacto.html"><p>CONTACTO</p></a>
-                    </div>    
-            </p>
+  <div class="card">
+    <div class="card-body card-body-f">
+      <h5 class="card-title">MAPA DEL SITIO</h5>
+      <p class="card-text">
+          <div class="text-center center-block sitio">
+                  <a href="../1-home/index.php"><p>HOME</p></a>
+                  <a href="../3-menu/menuF.php"><p>MENU</p></a>
+                  <a href="../5-galería/galeria.php"><p>GALERIA</p></a>
+                  <a href="../4-miembros/membresia.php"><p>MEMBRESIAS</p></a>
+                  <a href="../2-conocenos/contacto.php"><p>CONTACTO</p></a>
+              </div>    
+      </p>
+    </div>
+    <div class="card-footer">
+      <a><small class="text-muted">Pagina bajo construccion</small></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body card-body-f">
+      <h5 class="card-title"><center>CONEXIONES</center></h5>
+      <div class="text-center center-block">
+          <br />
+              <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+              <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+              <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+              <a href="mailto:a19310150@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
           </div>
-          <div class="card-footer">
-            <a><small class="text-muted">Pagina bajo construccion</small></a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body card-body-f">
-            <h5 class="card-title"><center>CONEXIONES</center></h5>
-            <div class="text-center center-block">
-                <br />
-                    <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                    <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                    <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                    <a href="mailto:a19310150@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-                </div>
-          </div>
-          <div class="card-footer">
-            <a href="../6-administrador/administrador.html"><small class="text-muted">Ingrese cambios aqui administrador</small></a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body card-body-f">
-            <h5 class="card-title">VISITANOS</h5>
-            <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7464.163768426525!2d-103.39655184087304!3d20.706899241472545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae4e8d5453d%3A0xc4fdd3929a2ecbd1!2sCentro%20de%20Ense%C3%B1anza%20T%C3%A9cnica%20Industrial%20Plantel%20Colomos!5e0!3m2!1sen!2smx!4v1604455867636!5m2!1sen!2smx" width="33" height="100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-          </div>
-          <div class="card-footer">
-          <a><small class="text-muted">Cierre del Segundo Parcial</small></a>
-          </div>
-        </div>
+    </div>
+    <div class="card-footer">
+      <a><small class="text-muted">Gracias por visitarnos</small></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body card-body-f">
+      <h5 class="card-title">VISITANOS</h5>
+      <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7464.163768426525!2d-103.39655184087304!3d20.706899241472545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae4e8d5453d%3A0xc4fdd3929a2ecbd1!2sCentro%20de%20Ense%C3%B1anza%20T%C3%A9cnica%20Industrial%20Plantel%20Colomos!5e0!3m2!1sen!2smx!4v1604455867636!5m2!1sen!2smx" width="33" height="100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <div class="card-footer">
+    <a><small class="text-muted">Cierre del Tercer Parcial</small></a>
+    </div>
+  </div>
 </footer>
 
 </html>

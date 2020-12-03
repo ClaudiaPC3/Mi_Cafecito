@@ -13,7 +13,7 @@
                 </body>
                 <script LANGUAGE="JavaScript">
                     window.alert("Producto eliminado de manera exitosa.");
-                    window.location.href="../administrador.html";
+                    window.location.href="../administrador.php";
                 </script>
             ');
     } else {

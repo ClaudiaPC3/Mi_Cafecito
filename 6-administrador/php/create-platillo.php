@@ -1,7 +1,7 @@
 <?php
-include("../php/conexion.php");
-header("Status: 301 Moved Permanently");
-header("Location: http://localhost:8080/sitioCompleto/6-administrador/administrador.html");
+include("../../php/conexion.php");
+//header("Status: 301 Moved Permanently");
+
 $nombre = $_POST ['nombre'];
 $categoria = $_POST ['categoria'];
 $tamanio = $_POST ['porcion'];
@@ -30,6 +30,6 @@ if($conexion->query($sqlInsertPlatillo) == TRUE){
 }
 
 $conexion->close();
-
+header("Location: ../administrador.php");
 
 ?>

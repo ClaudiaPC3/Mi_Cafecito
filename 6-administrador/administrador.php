@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -47,19 +50,55 @@
                     </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../2-conocenos/contacto.html">Conocenos</a>
+                <a class="nav-link" href="../2-conocenos/contacto.php">Conocenos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../3-menu/menu.html">Menu</a>
+                <a class="nav-link" href="../3-menu/menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../4-miembros/membresia.html">Miembros</a>
+                <a class="nav-link" href="../4-miembros/membresia.php">Miembros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../5-galería/galeria.html">Galería</a>
+                <a class="nav-link" href="../5-galería/galeria.php">Galería</a>
               </li>          
             </ul>
           </div>
+          <!-- de aqui -->
+          <div class="dropdown dropi">
+                    <a role="button" id="log-nav" class="btn-nav-log dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="myFunction(this.id)">
+                            <?php 
+                            if(isset($_SESSION["username"])){
+                              echo $_SESSION["username"];
+                            }else{
+                              echo "Usuario";
+                            }
+                              
+                            ?>
+                    </a>
+                    <?php 
+                      if(isset($_SESSION["username"]) and $_SESSION["admin"] == "1"){
+                        echo '
+                        <div class="dropdown-menu dropdown-menu-right dropi2">
+                        <a class="dropdown-item" role="button" href="../6-administrador/administrador.php">Opciones de administrador</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" role="button" href="../php/cerrarSesion.php">Cerrar Sesion</a>
+                      </div>';
+                      }else if(isset($_SESSION["username"])){
+                        echo '
+                        <div class="dropdown-menu dropdown-menu-right dropi2">
+                        <a class="dropdown-item" role="button" href="../php/cerrarSesion.php">Cerrar Sesion</a>
+                      </div>';
+
+                      }else{
+                        echo '
+                        <div class="dropdown-menu dropdown-menu-right dropi2">
+                          <a class="dropdown-item" role="button" href="../7-login/login.html">Ingresa</a>
+                          <a class="dropdown-item" role="button" href="../8-registro/registro.html">Registrate</a>
+                        </div>';
+                      }
+                    ?>
+            </div>
+            <!-- a aqui -->
         </div>
       </nav>
 
@@ -83,7 +122,7 @@
             </div>
             <div id="add_coffe" class="panel-collapse collapse" aria-labelledby="h_add_coffe" data-parent="#accordion">
                 <div class="card-body">            
-                    <form  action="../3-menu/create-platillo.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
+                    <form  action="./php/create-platillo.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                             <label for="nombre">Nombre</label>
@@ -251,19 +290,7 @@
         </div>    
     </div>
 
-
-
-
-
-
-
-
-
-
-     
-
-
-        <div class="card p-3">
+        <!-- <div class="card p-3">
             <div class="card-header" id="h_add_img">
                 <a role="button" class="collapsed" data-toggle="collapse" data-target="#add_img" aria-expanded="false" aria-controls="add_img">
                     <h4 style="color: #2A0859;">Agregar Imagen a la Galeria</h4><div class="divider"><span></span><span><i class="fas fa-camera"></i></span><span></span></div>
@@ -271,11 +298,11 @@
             </div>
             <div id="add_img" class="panel-collapse collapse" aria-labelledby="h_add_img" data-parent="#accordion">
                 <div class="card-body">           
-                    <form  action="galeria.php" method="POST" name="agregar_galeria" enctype="multipart/form-data">
+                    <form  action="../5-galería/php/galeriaB.php" method="POST" name="agregar_galeria" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="img_gal">Imagen</label>
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input in-img-gal" id="img_gal">
+                              <input type="file" class="custom-file-input in-img-gal" id="img_gal" name="img_gal">
                               <label class="custom-file-label" for="" data-browse="Buscar">Seleccionar archivo</label>
                             </div>
                         </div> 
@@ -284,7 +311,7 @@
                    
                 </div>
             </div>    
-        </div>
+        </div> -->
 
     <section>
       <script>
@@ -307,11 +334,11 @@
       <h5 class="card-title">MAPA DEL SITIO</h5>
       <p class="card-text">
           <div class="text-center center-block sitio">
-                  <a href="../1-home/index.html"><p>HOME</p></a>
-                  <a href="../3-menu/menu.html"><p>MENU</p></a>
-                  <a href="../5-galería/galeria.html"><p>GALERIA</p></a>
-                  <a href="../4-miembros/membresia.html"><p>MEMBRESIAS</p></a>
-                  <a href="../2-conocenos/contacto.html"><p>CONTACTO</p></a>
+                  <a href="../1-home/index.php"><p>HOME</p></a>
+                  <a href="../3-menu/menuF.php"><p>MENU</p></a>
+                  <a href="../5-galería/galeria.php"><p>GALERIA</p></a>
+                  <a href="../4-miembros/membresia.php"><p>MEMBRESIAS</p></a>
+                  <a href="../2-conocenos/contacto.php"><p>CONTACTO</p></a>
               </div>    
       </p>
     </div>
@@ -331,7 +358,7 @@
           </div>
     </div>
     <div class="card-footer">
-      <a href="../6-administrador/administrador.html"><small class="text-muted">Ingrese cambios aqui administrador</small></a>
+      <a><small class="text-muted">Gracias por visitarnos</small></a>
     </div>
   </div>
   <div class="card">
@@ -340,7 +367,7 @@
       <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7464.163768426525!2d-103.39655184087304!3d20.706899241472545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae4e8d5453d%3A0xc4fdd3929a2ecbd1!2sCentro%20de%20Ense%C3%B1anza%20T%C3%A9cnica%20Industrial%20Plantel%20Colomos!5e0!3m2!1sen!2smx!4v1604455867636!5m2!1sen!2smx" width="33" height="100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
     <div class="card-footer">
-    <a><small class="text-muted">Cierre del Segundo Parcial</small></a>
+    <a><small class="text-muted">Cierre del Tercer Parcial</small></a>
     </div>
   </div>
 </footer>

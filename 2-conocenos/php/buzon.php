@@ -24,7 +24,7 @@
                     </body>
                     <script LANGUAGE="JavaScript">
                         window.alert("Comentario publicado de manera exitosa.");
-                        window.location.href="../contacto.html";
+                        window.location.href="../contacto.php";
                     </script>
                 ');
         } else {
