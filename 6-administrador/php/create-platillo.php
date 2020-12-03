@@ -12,8 +12,9 @@ $img='img_menu';
 if(isset($_FILES[$img])){
     echo 'subido'.$_FILES[$img]['name'];
     $destino='../img/plat/'.$_FILES[$img]['name'];
+    $guardar = "../../img/plat/".$_FILES[$img]['name'];
     $ruta=$_FILES[$img]['tmp_name'];
-    copy($ruta,$destino);
+    copy($ruta,$guardar);
 }else{
     echo 'no subido';
 }

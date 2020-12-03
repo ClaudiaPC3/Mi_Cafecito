@@ -53,7 +53,7 @@
                 <a class="nav-link" href="../2-conocenos/contacto.php">Conocenos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../3-menu/menu.php">Menu</a>
+                <a class="nav-link" href="../3-menu/menuF.php">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../4-miembros/membresia.php">Miembros</a>
@@ -252,7 +252,7 @@
                           </div>
                       </div>
                       <br><br>
-                          <button type="submit" class="btn btn-enviar w-100">Agregar</button>
+                          <button type="submit" class="btn btn-enviar w-100">Modificar</button>
                   </form>
                 </div>
               </div>

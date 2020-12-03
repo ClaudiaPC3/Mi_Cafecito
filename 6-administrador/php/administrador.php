@@ -32,7 +32,7 @@
         $currentData['descripcion'] = $descripcion;
     if($imagen != '') {
         $currentData['imagen'] =  "../img/plat/" . $imagen;
-        $target_file = "../img/plat/" . basename($imagen);
+        $target_file = "../../img/plat/" . basename($imagen);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
