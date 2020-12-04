@@ -1,7 +1,10 @@
 <?php
     include("../../php/conexion.php");
+    session_start();
 
-    $sql = "SELECT username, admin FROM usuario";
+    $currentUser = $_SESSION["username"];
+
+    $sql = "SELECT username, admin FROM usuario WHERE username != '$currentUser'";
     $result = mysqli_query($conexion, $sql);
 
     $myArray = array();
