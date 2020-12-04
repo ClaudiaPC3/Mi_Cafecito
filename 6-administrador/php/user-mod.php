@@ -33,12 +33,22 @@
                     
                 </body>
                 <script LANGUAGE="JavaScript">
-                    window.alert("usuario modificado de manera exitosa.");
-                   
+                    window.alert("Usuario modificado de manera exitosa.");
+                    window.location.href="../administrador.php";
                 </script>
             ');
     } else {
-        echo $sql . " error " . $conexion->error;
+        echo ('
+                <body style="background: #2A0859">
+                    
+                </body>
+                <script LANGUAGE="JavaScript">
+                    window.alert("Ya existe un usuario con ese nombre");
+                    window.location.href="../administrador.php";
+                </script>
+            ');
+
+        //echo $sql . " error " . $conexion->error;
     }
     $conexion->close();
 ?>

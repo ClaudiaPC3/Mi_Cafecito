@@ -447,14 +447,8 @@ h3{
   border: none !important;
   margin-bottom: 10px;
   vertical-align: bottom;
-  transition: 0.35s;
   scale: 1;
   font-family: 'Cherry Swash', cursive;
-}
-
-.btn-enviar:hover{
-  scale: 1.5;
-  transition: 0.35s;
 }
 
 .btn-enviar2{
