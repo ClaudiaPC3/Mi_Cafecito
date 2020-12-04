@@ -271,7 +271,7 @@
                             <label for="asunto">Asunto</label>
                             <select id="asunto" name="asunto" class="form-control">
                                 <option type="button" value="sugerencia" id="sug" onclick="hidePlat()">Sugerencia</option>
-                                <option type="button" value="comentario" id="quej"  onclick="hidePlat()">Comentario</option>                                
+                                <option type="button" value="queja" id="quej"  onclick="hidePlat()">Queja</option>                                
                                 <option type="button" value="platillo" id="plati" onclick="$('#show-plat-in').toggleClass('visible');$('#show-plat-in').removeClass('invisible');">Platillo</option>
                                 <option selected type="button" value="otro" id="otro" onclick="hidePlat()">Otro..</option>
                             </select>

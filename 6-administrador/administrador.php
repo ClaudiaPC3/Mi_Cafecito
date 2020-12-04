@@ -122,7 +122,7 @@
             </div>
             <div id="add_coffe" class="panel-collapse collapse" aria-labelledby="h_add_coffe" data-parent="#accordion">
                 <div class="card-body">            
-                    <form  action="./php/create-platillo.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
+                    <form  action="./php/administrador-create.php" method="POST" name="agregar_menu" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                             <label for="nombre">Nombre</label>
@@ -167,7 +167,7 @@
 
         <div class="card p-3">
           <div class="card-header" id="h_mod_coffe">
-              <a role="button" class="collapsed" data-toggle="collapse" data-target="#mod_coffe" aria-expanded="false" aria-controls="mod_coffe">
+              <a role="button" onClick="openPlat()" class="collapsed" data-toggle="collapse" data-target="#mod_coffe" aria-expanded="false" aria-controls="mod_coffe">
                   <h4 style="color: #2A0859;">Modificar Bebida del Menu</h4><div class="divider"><span></span><span><i class="fas fa-exchange-alt"></i></span><span></span></div>
               </a>
           </div>
@@ -263,7 +263,7 @@
 
       <div class="card p-3">
         <div class="card-header" id="h_del_coffe">
-            <a role="button" class="collapsed" data-toggle="collapse" data-target="#del_coffe" aria-expanded="false" aria-controls="del_coffe">
+            <a role="button" onClick="openPlat()" class="collapsed" data-toggle="collapse" data-target="#del_coffe" aria-expanded="false" aria-controls="del_coffe">
                 <h4 style="color: #2A0859;">Eliminar Bebida del Menu</h4><div class="divider"><span></span><span><i class="fas fa-trash-alt"></i></span><span></span></div>
             </a>
         </div>
@@ -312,6 +312,108 @@
                 </div>
             </div>    
         </div> -->
+        <div class="card p-3">
+        <div class="card-header" id="h_com">
+            <a role="button" onClick="fillTable()" class="collapsed" data-toggle="collapse" data-target="#com" aria-expanded="false" aria-controls="com">
+                <h4 style="color: #2A0859;">Comentarios</h4><div class="divider"><span></span><span><i class="fas fa-comments"></i></span><span></span></div>
+            </a>
+        </div>
+        <div id="com" class="panel-collapse collapse" aria-labelledby="h_com" data-parent="#accordion">
+            <div class="card-body">                
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <h6>Usuario</h6>
+                    </div>
+                    <div class="col-sm">
+                      <h6>Asunto</h6>
+                    </div>
+                    <div class="col-sm">
+                      <h6>Mensaje</h6>
+                    </div>
+                  </div>
+                      <div id="show-comment"></div>
+                </div>
+              </div>
+            </div>
+        </div>    
+    </div>
+
+    <div class="card p-3">
+        <div class="card-header" id="h_d-user">
+            <a role="button" onClick="openUs()" class="collapsed" data-toggle="collapse" data-target="#d-user" aria-expanded="false" aria-controls="d-user">
+                <h4 style="color: #2A0859;">Usuarios</h4><div class="divider"><span></span><span><i class="fas fa-users-cog"></i></span><span></span></div>
+            </a>
+        </div>
+        <div id="d-user" class="panel-collapse collapse" aria-labelledby="h_d-user" data-parent="#accordion">
+            <div class="card-body"> 
+
+            <form  action="" method="POST" name="us-form" id="us-form" enctype="multipart/form-data"> <!--quiza?-->
+                      <h6>Elige un usuario</h6>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-enviar btn-outline-secondary" type="button">Elegir</button>
+                        </div>
+                        <select class="custom-select" id="select-us" aria-label="Example select with button addon" name="select-us">
+
+                        </select>
+                      <br><br>
+                      </div>
+                      <div class="divider"><span></span><span><i class="fas fa-people-arrows"></i></span><span></span></div>         
+                      <div class="row">
+                        <div class="col-sm">
+                          <h6>Cambiar Permisos</h6>
+                        </div>
+                        <div class="col-sm">
+                          <button type="button" value="btn-perm" name="btn-perm" onClick="permUs()" class="btn btn-enviar w-100">Administrador - Usuario</button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm">
+                          <h6>Modificar</h6>
+                        </div>
+                        <div class="col-sm">
+                        
+                          <button type="button" value="btn-modUs" name="btn-modUs" class="btn btn-enviar w-100" data-toggle="collapse" data-target="#modUsMenu" aria-expanded="false" aria-controls="modUsMenu"> Modificar</button>
+                        </div>
+                      </div>      
+                      <!-- onClick="modUs()" -->
+                      <div class="form-row collapse" id='modUsMenu'>
+                      <div id="show-currentUs"></div>
+                      <div class="form-group col-md-4">
+                          <label for="porcion">Usuario</label>
+                          <input type="text" class="form-control" id="us-name" name="us-name" placeholder="nombre de usuario"></input>
+                      </div>
+                      <div class="form-group col-md-4">
+                          <label for="precio">Correo</label>
+                          <input type="text" class="form-control" id="us-em" name="us-em" placeholder="correo de usuario"></input>
+                      </div>
+                      <div class="form-group col-md-4">
+                          <label for="precio">Contraseña</label>
+                          <input type="text" class="form-control" id="us-pass" name="us-pass" placeholder="contraseña"></input>
+                      </div>    
+                        <button type="button" value="btn-modOkUs" name="btn-modOkUs" onClick="modOkUs()" class="btn btn-enviar w-100">Modificar</button>                  
+                      </div>
+                      <br><br>
+                      <div class="divider"><span></span><span><i class="fas fa-user-slash"></i></span><span></span></div>        
+                      <div class="row">
+                        <div class="col-sm">
+                          <h6>Eliminar usuario</h6>
+                        </div>
+                        <div class="col-sm">
+                          <button type="button" value="btn-dele" name="btn-dele" onClick="delUs()" class="btn btn-enviar w-100" style="background-color: #d2afff !important; color: #2A0859 !important">
+                          Eliminar</button>
+                        </div>
+                      </div>
+                          
+                  </form>
+              </div>
+            </div>
+        </div>    
+
+
+
+
 
     <section>
       <script>
@@ -322,9 +424,10 @@
             $('nav').removeClass('scrolled');
             $('nav').toggleClass('notScrolled');
         }            
-    </script>
+    </script> 
            <script src="../js/prueba.js"></script>
            <script src="extra-administrador.js"></script>
+           <script src="extra-mod.js"></script>
     </section>
 </body>
 
